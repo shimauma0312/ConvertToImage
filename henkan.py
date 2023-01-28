@@ -2,6 +2,20 @@
 import struct
 import numpy as np
 import matplotlib.pyplot as plt
+# 
+#　 　　／￣￣￣￣＼
+# 　　／　　　　　　＼
+# 　 / ＿＿＿＿＿＿＿∧
+# 　/ ｜　　　　/⌒ ｜∧
+# `｜ ｜＿＼_　 ＿＿｜ ｜
+#　 L_亅|(0|　　|0)| L_亅
+#   `("ヽノヽワヽノ")′
+# 　　 ＼＿＿＿＿＿／
+# 　　　 ／∨８∨＼
+#　 　 ⊂∨| 凵 |∨⊃
+# 　　　　 |＿＿|
+# 　　　　　ＨＨ
+#　 　　　 (ﾆ)(ﾆ)
 
 # バイナリデータを読み込む
 with open('images/train-images-idx3-ubyte','rb') as f:
