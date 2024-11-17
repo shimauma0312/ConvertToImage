@@ -1,4 +1,3 @@
-# Pythonスクリプト
 import struct
 import numpy as np
 import matplotlib.pyplot as plt
@@ -45,5 +44,5 @@ with open('images/train-images-idx3-ubyte','rb') as f:
     for index, image in enumerate(images):
         # 配列を28x28の配列に変換
         image = np.array(image).reshape(28,28)
-        # 画像を保存
+
         plt.imsave('image_{}.png'.format(index), image, cmap='gray')
