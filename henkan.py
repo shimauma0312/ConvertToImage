@@ -5,14 +5,6 @@ from PIL import Image
 import os
 
 def process_data(is_image_to_binary=True, input_path=None, output_path=None):
-    """
-    画像とバイナリ相互変換
-    
-    Parameters:
-    is_image_to_binary (bool): True=画像→バイナリ変換, False=バイナリ→画像変換
-    input_path (str): 入力ファイルまたはディレクトリのパス
-    output_path (str): 出力先のパスまたはファイル名
-    """
     
     # 出力先ディレクトリ
     if output_path and not os.path.exists(os.path.dirname(output_path)):
@@ -35,7 +27,7 @@ def convert_image_to_binary(input_path, output_path):
     if os.path.isfile(input_path):
         images = [np.array(Image.open(input_path).convert('L'))]
         file_names = [os.path.basename(input_path)]
-    # ディレクトリ内の全画像を処理する場合
+
     else:
         images = []
         file_names = []
@@ -56,7 +48,7 @@ def convert_image_to_binary(input_path, output_path):
         print("変換する画像が見つかりませんでした")
         return
     
-    # バイナリファイルの作成
+    # バイナリファイル作成
     output_file = output_path if output_path else 'output.idx3-ubyte'
     
     with open(output_file, 'wb') as f:
@@ -82,7 +74,6 @@ def convert_image_to_binary(input_path, output_path):
             f.write(f"{i}: {name}\n")
 
 def convert_binary_to_image(input_path, output_dir):
-    """バイナリデータから画像を生成する関数"""
     
     if not os.path.exists(input_path):
         print(f"エラー: 入力ファイル {input_path} が存在しません")
